@@ -1,0 +1,22 @@
+$threads-font-path: "~plaid-threads/fonts";
+@import "~plaid-threads/scss/typography";
+@import "~plaid-threads/scss/variables";
+
+* {
+  box-sizing: border-box;
+  width: 100%;
+}
+
+.app {
+  width: 100%;
+  height: 100%;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  height: 100%;
+  width: 100%;
+  flex-direction: row;
+  justify-content: space-between;
+}

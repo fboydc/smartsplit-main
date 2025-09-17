@@ -1,0 +1,363 @@
+{
+    "latest_transactions": [
+          {
+            "transaction_id": "txn_001",
+            "account_id": "acc_001",
+            "amount": 1600.00,
+            "iso_currency_code": "USD",
+            "date": "2025-07-01",
+            "authorized_date": "2025-06-30",
+            "name": "Rent Payment - Property Mgmt Co",
+            "merchant_name": null,
+            "payment_channel": "online",
+            "pending": false,
+            "transaction_type": "special",
+            "category": ["Rent & Utilities", "Rent"],
+            "category_id": "22001000",
+            "personal_finance_category": {
+              "primary": "RENT_AND_UTILITIES",
+              "detailed": "RENT_AND_UTILITIES_RENT",
+              "confidence_level": "VERY_HIGH"
+            },
+            "location": {
+              "country": "US"
+            }
+          },
+          {
+            "transaction_id": "txn_002",
+            "account_id": "acc_001",
+            "amount": 95.47,
+            "iso_currency_code": "USD",
+            "date": "2025-07-02",
+            "authorized_date": "2025-07-01",
+            "name": "FPL - Electric Utility",
+            "merchant_name": "Florida Power & Light",
+            "payment_channel": "online",
+            "pending": false,
+            "transaction_type": "place",
+            "category": ["Rent & Utilities", "Gas & Electricity"],
+            "category_id": "22007000",
+            "personal_finance_category": {
+              "primary": "RENT_AND_UTILITIES",
+              "detailed": "RENT_AND_UTILITIES_GAS_AND_ELECTRICITY",
+              "confidence_level": "VERY_HIGH"
+            },
+            "location": {
+              "city": "Miami",
+              "region": "FL",
+              "country": "US"
+            }
+          },
+          {
+            "transaction_id": "txn_003",
+            "account_id": "acc_001",
+            "amount": 142.21,
+            "iso_currency_code": "USD",
+            "date": "2025-07-05",
+            "authorized_date": "2025-07-05",
+            "name": "Publix Super Markets",
+            "merchant_name": "Publix",
+            "payment_channel": "in store",
+            "pending": false,
+            "transaction_type": "place",
+            "category": ["Food & Drink", "Groceries"],
+            "category_id": "13005000",
+            "personal_finance_category": {
+              "primary": "FOOD_AND_DRINK",
+              "detailed": "FOOD_AND_DRINK_GROCERIES",
+              "confidence_level": "VERY_HIGH"
+            },
+            "location": {
+              "city": "Miami",
+              "region": "FL",
+              "country": "US"
+            }
+          },
+          {
+            "transaction_id": "txn_004",
+            "account_id": "acc_001",
+            "amount": 27.84,
+            "iso_currency_code": "USD",
+            "date": "2025-07-07",
+            "authorized_date": "2025-07-06",
+            "name": "Shake Shack",
+            "merchant_name": "Shake Shack",
+            "payment_channel": "in store",
+            "pending": false,
+            "transaction_type": "place",
+            "category": ["Food & Drink", "Restaurant"],
+            "category_id": "13005001",
+            "personal_finance_category": {
+              "primary": "FOOD_AND_DRINK",
+              "detailed": "FOOD_AND_DRINK_RESTAURANT",
+              "confidence_level": "VERY_HIGH"
+            },
+            "location": {
+              "city": "Miami Beach",
+              "region": "FL",
+              "country": "US"
+            }
+          },
+          {
+            "transaction_id": "txn_005",
+            "account_id": "acc_001",
+            "amount": 54.67,
+            "iso_currency_code": "USD",
+            "date": "2025-07-08",
+            "authorized_date": "2025-07-08",
+            "name": "Shell Oil",
+            "merchant_name": "Shell",
+            "payment_channel": "in store",
+            "pending": false,
+            "transaction_type": "place",
+            "category": ["Transportation", "Gas"],
+            "category_id": "22006001",
+            "personal_finance_category": {
+              "primary": "TRANSPORTATION",
+              "detailed": "TRANSPORTATION_GAS",
+              "confidence_level": "VERY_HIGH"
+            },
+            "location": {
+              "city": "Miami",
+              "region": "FL",
+              "country": "US"
+            }
+          },
+          {
+            "transaction_id": "txn_006",
+            "account_id": "acc_001",
+            "amount": 85.32,
+            "iso_currency_code": "USD",
+            "date": "2025-07-03",
+            "authorized_date": "2025-07-02",
+            "name": "Verizon Wireless",
+            "merchant_name": "Verizon",
+            "payment_channel": "online",
+            "pending": false,
+            "transaction_type": "digital",
+            "category": ["Rent & Utilities", "Telephone"],
+            "category_id": "22009000",
+            "personal_finance_category": {
+              "primary": "RENT_AND_UTILITIES",
+              "detailed": "RENT_AND_UTILITIES_TELEPHONE",
+              "confidence_level": "VERY_HIGH"
+            },
+            "location": {
+              "country": "US"
+            }
+          },
+          {
+            "transaction_id": "txn_007",
+            "account_id": "acc_001",
+            "amount": 243.50,
+            "iso_currency_code": "USD",
+            "date": "2025-07-15",
+            "authorized_date": "2025-07-14",
+            "name": "Nelnet Student Loan",
+            "merchant_name": "Nelnet",
+            "payment_channel": "online",
+            "pending": false,
+            "transaction_type": "special",
+            "category": ["Loan Payments", "Student Loan Payment"],
+            "category_id": "18007000",
+            "personal_finance_category": {
+              "primary": "LOAN_PAYMENTS",
+              "detailed": "LOAN_PAYMENTS_STUDENT_LOAN_PAYMENT",
+              "confidence_level": "VERY_HIGH"
+            },
+            "location": {
+              "country": "US"
+            }
+          },
+          {
+            "transaction_id": "txn_008",
+            "account_id": "acc_001",
+            "amount": 500.00,
+            "iso_currency_code": "USD",
+            "date": "2025-07-10",
+            "authorized_date": "2025-07-10",
+            "name": "Chase Credit Card Payment",
+            "merchant_name": "Chase",
+            "payment_channel": "online",
+            "pending": false,
+            "transaction_type": "special",
+            "category": ["Loan Payments", "Credit Card Payment"],
+            "category_id": "18006000",
+            "personal_finance_category": {
+              "primary": "LOAN_PAYMENTS",
+              "detailed": "LOAN_PAYMENTS_CREDIT_CARD_PAYMENT",
+              "confidence_level": "VERY_HIGH"
+            },
+            "location": {
+              "country": "US"
+            }
+          },
+          {
+            "transaction_id": "txn_009",
+            "account_id": "acc_001",
+            "amount": 79.99,
+            "iso_currency_code": "USD",
+            "date": "2025-07-06",
+            "authorized_date": "2025-07-06",
+            "name": "Xfinity Internet",
+            "merchant_name": "Xfinity",
+            "payment_channel": "online",
+            "pending": false,
+            "transaction_type": "place",
+            "category": ["Rent & Utilities", "Internet & Cable"],
+            "category_id": "22008000",
+            "personal_finance_category": {
+              "primary": "RENT_AND_UTILITIES",
+              "detailed": "RENT_AND_UTILITIES_INTERNET_AND_CABLE",
+              "confidence_level": "VERY_HIGH"
+            },
+            "location": {
+              "country": "US"
+            }
+          },
+          {
+            "transaction_id": "txn_010",
+            "account_id": "acc_001",
+            "amount": 69.00,
+            "iso_currency_code": "USD",
+            "date": "2025-07-04",
+            "authorized_date": "2025-07-04",
+            "name": "U-Haul Storage",
+            "merchant_name": "U-Haul",
+            "payment_channel": "in store",
+            "pending": false,
+            "transaction_type": "place",
+            "category": ["General Services", "Storage"],
+            "category_id": "21009002",
+            "personal_finance_category": {
+              "primary": "GENERAL_SERVICES",
+              "detailed": "GENERAL_SERVICES_STORAGE",
+              "confidence_level": "VERY_HIGH"
+            },
+            "location": {
+              "city": "Miami",
+              "region": "FL",
+              "country": "US"
+            }
+          },
+          {
+            "transaction_id": "txn_011",
+            "account_id": "acc_001",
+            "amount": 39.99,
+            "iso_currency_code": "USD",
+            "date": "2025-07-01",
+            "authorized_date": "2025-07-01",
+            "name": "LA Fitness Membership",
+            "merchant_name": "LA Fitness",
+            "payment_channel": "in store",
+            "pending": false,
+            "transaction_type": "place",
+            "category": ["Personal Care", "Gym & Fitness Centers"],
+            "category_id": "17001001",
+            "personal_finance_category": {
+              "primary": "PERSONAL_CARE",
+              "detailed": "PERSONAL_CARE_GYM_AND_FITNESS_CENTERS",
+              "confidence_level": "VERY_HIGH"
+            },
+            "location": {
+              "country": "US"
+            }
+          },
+          {
+            "transaction_id": "txn_012",
+            "account_id": "acc_001",
+            "amount": 72.00,
+            "iso_currency_code": "USD",
+            "date": "2025-07-14",
+            "authorized_date": "2025-07-13",
+            "name": "Topgolf Miami",
+            "merchant_name": "Topgolf",
+            "payment_channel": "in store",
+            "pending": false,
+            "transaction_type": "place",
+            "category": ["Entertainment", "Other Entertainment"],
+            "category_id": "16003000",
+            "personal_finance_category": {
+              "primary": "ENTERTAINMENT",
+              "detailed": "ENTERTAINMENT_OTHER_ENTERTAINMENT",
+              "confidence_level": "VERY_HIGH"
+            },
+            "location": {
+              "city": "Miami Gardens",
+              "region": "FL",
+              "country": "US"
+            }
+          },
+          {
+            "transaction_id": "txn_013",
+            "account_id": "acc_001",
+            "amount": 15.49,
+            "iso_currency_code": "USD",
+            "date": "2025-07-09",
+            "authorized_date": "2025-07-09",
+            "name": "Netflix",
+            "merchant_name": "Netflix",
+            "payment_channel": "digital",
+            "pending": false,
+            "transaction_type": "digital",
+            "category": ["Entertainment", "TV & Movies"],
+            "category_id": "16001000",
+            "personal_finance_category": {
+              "primary": "ENTERTAINMENT",
+              "detailed": "ENTERTAINMENT_TV_AND_MOVIES",
+              "confidence_level": "VERY_HIGH"
+            },
+            "location": {
+              "country": "US"
+            }
+          },
+          {
+            "transaction_id": "txn_014",
+            "account_id": "acc_001",
+            "amount": 112.83,
+            "iso_currency_code": "USD",
+            "date": "2025-07-12",
+            "authorized_date": "2025-07-12",
+            "name": "GEICO Auto Insurance",
+            "merchant_name": "GEICO",
+            "payment_channel": "online",
+            "pending": false,
+            "transaction_type": "place",
+            "category": ["General Services", "Insurance"],
+            "category_id": "21009001",
+            "personal_finance_category": {
+              "primary": "GENERAL_SERVICES",
+              "detailed": "GENERAL_SERVICES_INSURANCE",
+              "confidence_level": "VERY_HIGH"
+            },
+            "location": {
+              "country": "US"
+            }
+          },
+          {
+            "transaction_id": "txn_015",
+            "account_id": "acc_001",
+            "amount": 36.22,
+            "iso_currency_code": "USD",
+            "date": "2025-07-13",
+            "authorized_date": "2025-07-13",
+            "name": "CVS Pharmacy",
+            "merchant_name": "CVS",
+            "payment_channel": "in store",
+            "pending": false,
+            "transaction_type": "place",
+            "category": ["Medical", "Pharmacies & Supplements"],
+            "category_id": "15001000",
+            "personal_finance_category": {
+              "primary": "MEDICAL",
+              "detailed": "MEDICAL_PHARMACIES_AND_SUPPLEMENTS",
+              "confidence_level": "VERY_HIGH"
+            },
+            "location": {
+              "city": "Miami",
+              "region": "FL",
+              "country": "US"
+            }
+          }
+        ]
+}

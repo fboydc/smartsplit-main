@@ -1,0 +1,47 @@
+version: "3.5"
+x-environment:
+  &QUICKSTART_ENVIRONMENT # These are read from .env file. The values in the .env file maybe overriden by shell envvars
+  PLAID_CLIENT_ID: ${PLAID_CLIENT_ID}
+  PLAID_SECRET: ${PLAID_SECRET}
+  PLAID_PRODUCTS: ${PLAID_PRODUCTS}
+  PLAID_COUNTRY_CODES: ${PLAID_COUNTRY_CODES}
+  PLAID_REDIRECT_URI: ${PLAID_REDIRECT_URI}
+  PLAID_ENV: ${PLAID_ENV}
+services:
+  go:
+    networks:
+      - "quickstart"
+    build:
+      context: .
+      dockerfile: ./go/Dockerfile
+    ports: ["8000:8000"]
+    environment:
+      <<: *QUICKSTART_ENVIRONMENT
+  pg: 
+    image: postgres:13
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: postgres
+    ports: ["5432:5432"]
+    networks:
+      - "quickstart"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql
+  pgadmin:
+    image: dpage/pgadmin4
+    environment:
+      PGADMIN_DEFAULT_EMAIL: admin@admin.com
+      PGADMIN_DEFAULT_PASSWORD: admin
+    ports:
+      - "5050:80"
+    networks:
+      - "quickstart"
+    
+networks:
+  quickstart:
+    name: quickstart
+
+volumes:
+  postgres_data:

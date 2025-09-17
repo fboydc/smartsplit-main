@@ -1,0 +1,74 @@
+.subTotalRow > td{
+  background-color: #D8D8D8;
+  padding: 0px 10px;
+}
+
+.subTotalRow > td > p {
+  font-size: 0.9em;
+  font-weight: bold;
+}
+table {
+  border-collapse: collapse;
+  margin: 25px 0;
+  font-size: 14px;
+  font-family: sans-serif;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+  width: 100%;
+  table-layout: fixed;
+}
+table thead tr {
+  background-color: #4bbd7f;
+  color: #ffffff;
+  text-align: left;
+}
+table th,
+table td {
+  padding: 10px 15px;
+  width: 33.3333%;
+}
+
+table tbody tr {
+  border-bottom: 1px solid #dddddd;
+}
+
+table tbody tr:nth-of-type(even) {
+  background-color: #f6f6f6;
+}
+table tbody tr:last-of-type {
+  border-bottom: 2px solid #4bbd7f;
+}
+table tbody tr.active-row {
+  font-weight: bold;
+  color: #4bbd7f;
+}
+table td:first-child input {
+  width: 50px;
+
+}
+
+table tbody tr td input,
+table tbody tr td select {
+  padding: 3px 5px;
+  box-sizing: border-box;
+  border: 1px solid #dddddd;
+  width: 100%;
+  min-width: 100%;
+}
+
+table tbody tr td button {
+  margin-left: 50%
+}
+
+.tableButton {
+  background-color: #4bbd7f;;
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  width: 150px;
+}

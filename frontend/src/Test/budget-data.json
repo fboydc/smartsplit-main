@@ -1,0 +1,107 @@
+{
+    "budget": {
+        "expenses": [
+            {
+                "description": "Rent",
+                "amount": 1500,
+                "category": "1",
+                "allocation_type": "1"
+            },
+            {
+                "description": "FPL",
+                "amount": 100,
+                "category": "2",
+                "allocation_type": "1"
+            },
+            {
+                "description": "Groceries",
+                "amount": 500,
+                "category": "3",
+                "allocation_type": "1"
+            },
+            {
+                "description": "Dining out",
+                "amount": 400,
+                "category": "4",
+                "allocation_type": "3"
+            },
+            {
+                "description": "Vehicle gas",
+                "amount": 120,
+                "category": "5",
+                "allocation_type": "1"
+            },
+            {
+                "description": "Internet",
+                "amount": 80,
+                "category": "9",
+                "allocation_type": "1"
+            },
+            {
+                "description": "Phone Bill",
+                "amount": 150,
+                "category": "6",
+                "allocation_type": "1"
+            },
+            {
+                "description": "Storage",
+                "amount": 100,
+                "category": "7",
+                "allocation_type": "1"
+            },
+            {
+                "description": "Gym",
+                "amount": 50,
+                "category": "11",
+                "allocation_type": "3"
+            },
+            {
+                "description": "TV subscriptions",
+                "amount": 30,
+                "category": "13",
+                "allocation_type": "3"
+            },
+            {
+                "description": "Car insurance",
+                "amount": 120,
+                "category": "14",
+                "allocation_type": "1"
+            },
+            {
+                "description": "Credit card payment",
+                "amount": 50,
+                "category": "7",
+                "allocation_type": "2"
+            },
+            {
+                "description": "Student loan payment",
+                "amount": 350,
+                "category": "7",
+                "allocation_type": "2"
+            }
+        ],
+        "income": [
+            {
+                "amount": 5000,
+                "frequency": "Semi-Monthly"
+            }
+        ],
+        "allocations": [
+            {
+                "allocation_type": "1",
+                "allocation_description": "Needs",
+                "allocation_factor": 0.5
+            },
+            {
+                "allocation_type": "2",
+                "allocation_description": "Debts and Repayment",
+                "allocation_factor": 0.2
+            },
+            {
+                "allocation_type": "3",
+                "allocation_description": "Wants",
+                "allocation_factor": 0.3
+            }
+        ]
+    }
+}

@@ -1,0 +1,180 @@
+h2 {
+    margin: 0;
+}
+
+.container {
+    padding: 2rem;
+
+}
+
+.active {
+    background-color: #4b89bd!important;
+    color: #fff;
+}
+
+
+.btn {
+    user-select: none;
+    background-color: transparent;
+    border: 1px solid transparent;
+    font-size: 2rem;
+    padding: 1rem 0.4rem;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.inputIncome {
+    padding: 10px;
+    border-radius: 5px;
+    max-width: 270px;
+}
+.tableButton {
+    background-color: #4bbd7f;;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    width: 150px;
+}
+
+.btn:hover {
+    background-color: #7f4bbd;
+    color: #fff;
+}
+
+
+.listGroup {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 0
+}
+
+.listgroupItem {
+    position: relative;
+    display: block;
+    color: black;
+    text-decoration: none;
+    background-color: #fff;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    height: 100%;
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.piechartContainer {
+    width: 50%;
+    max-width: 600px;
+    margin: 0 auto;
+
+}
+
+.progressBarContainer {
+    width: 50%;
+    max-width: 400px;
+    margin: 0 auto;
+    padding-top: 8.5em;
+}
+
+
+
+
+.position-relative {
+    position: relative;
+}
+
+
+.sidebar {
+    border-right: 1px solid #dee2e6;
+    min-height: 100vh;
+    position:absolute;
+    z-index: 2;
+    top: 0;
+    left: 0;
+    right: 0;
+    max-width: 300px;
+    overflow-y: auto;
+    padding: 1rem;
+    height: 100%;
+    display: block;
+
+}
+
+.siderbarNav {
+    padding: 0;
+    margin-top: 3rem;
+}
+
+.form-input {
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+
+}
+
+.form-input input {
+    max-width: 300px;
+}
+@media (min-width: 768px){
+    .col-md-3 {
+        flex: 0 0 auto;
+        width: 25%;
+    }
+}
+
+
+
+@media (min-width: 992px) {
+    .col-lg-10 {
+        flex: 0 0 auto;
+        width: 83.33333333%;
+    }
+
+    .col-lg-2 {
+        flex: 0 0 auto;
+        width: 16%;
+    }
+
+    .col-lg-3 {
+        flex: 0 0 auto;
+        width: 33%;
+    }
+
+
+
+
+}
+
+@media (min-width: 768px) {
+    .col-md-9 {
+        flex: 0 0 auto;
+        width: 75%;
+    }
+
+    .col-md-5 {
+        flex: 0 0 auto;
+        width: 50%;
+    }
+
+    .col-md-3 {
+        flex: 0 0 auto;
+        width: 33%;
+    }
+}
+
+
+@media (min-width: 992px) {
+    .col-lg-5 {
+        flex: 0 0 auto;
+        width: 50%;
+    }
+}

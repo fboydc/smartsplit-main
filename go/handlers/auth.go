@@ -7,7 +7,7 @@ import (
 	"strings"
 	"time"
 
-	"github.com/fboydc/smartsplit-main/models"
+	"github.com/fboydc/smartsplit-main/models/api"
 	"github.com/gin-gonic/gin"
 	"github.com/golang-jwt/jwt/v5"
 	"golang.org/x/crypto/bcrypt"
@@ -55,7 +55,7 @@ func (h *AuthHandlers) LoginHandler(c *gin.Context) {
 		return
 	}
 
-	response := models.AuthResponse{
+	response := api.AuthResponse{
 		Message:    "Login successful",
 		Token:      token,
 		PlaidToken: plaidToken,

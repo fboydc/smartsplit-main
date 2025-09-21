@@ -21,6 +21,38 @@ CREATE TABLE IF NOT EXISTS "Users" (
   "updated_at" timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
 );
 
+CREATE TABLE IF NOT EXISTS "PlaidItem" (
+  "item_id" UUID PRIMARY KEY DEFAULT gen_random_uuid(), --  
+  "user_id" UUID NOT NULL REFERENCES "Users"("user_id") ON DELETE CASCADE,
+  "plaid_item_id" varchar(255) NOT NULL,
+  "plaid_access_token" varchar(255) NOT NULL,
+  "institution_name" varchar(255),
+  "created_at" timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  "updated_at" timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  "sync_cursor" varchar(255),
+  "last_synced_at" timestamp
+);
+
+CREATE TABLE IF NOT EXISTS "TransactionRaw" (
+  "transaction_id" UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+  "user_id" UUID NOT NULL REFERENCES "Users"("user_id") ON DELETE CASCADE,
+  "item_id" UUID NOT NULL REFERENCES "PlaidItem"("item_id") ON DELETE CASCADE,
+  "plaid_transaction_id" varchar(255) NOT NULL,
+  "plaid_account_id" varchar(255) NOT NULL,
+  UNIQUE("user_id", "plaid_transaction_id"),   
+  "name" varchar(255) NOT NULL,                
+  "amount" decimal NOT NULL,                  
+  "iso_currency_code" varchar(10),
+  "date" date NOT NULL,
+  "pending" boolean DEFAULT false,
+  "plaid_category" jsonb,
+  "personal_finance_category" jsonb,
+  "raw" jsonb,
+  "created_at" timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  "updated_at" timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
+);
+;
+
 CREATE TABLE IF NOT EXISTS "Allocations" (
   "allocation_type" UUID PRIMARY KEY DEFAULT gen_random_uuid(),
   "allocation_description" varchar(255) NOT NULL,
@@ -50,6 +82,13 @@ CREATE TABLE IF NOT EXISTS "Expenses" (
 );
 
 
+CREATE TABLE IF NOT EXISTS "TransactionExpense" (
+   "transcation_id" UUID PRIMARY KEY REFERENCES "TransactionRaw"("transaction_id") ON DELETE CASCADE,
+   "expense_id" UUID NOT NULL REFERENCES "Expenses"("expense_id") ON DELETE CASCADE,
+   "confidence" decimal,
+   "source" varchar(50) NOT NULL -- 'rule', 'manual', 'pfcat'
+);
+
 CREATE TABLE IF NOT EXISTS "Income" (
   "income_id" UUID PRIMARY KEY DEFAULT gen_random_uuid(),
   "income_description" varchar(255) NOT NULL,
@@ -65,6 +104,7 @@ CREATE TABLE IF NOT EXISTS "Income" (
 
 INSERT INTO "Users" ("user_id", "username", "email", "password_hash", "plaid_access_token") VALUES ('ed1bec4c-0a1b-4783-b47f-16ba0650b821', 'admin', 'admin@smartsplit.com', '$2a$10$nLavVuPde6DTLfHwkoxKkOOYfUt/QZrIg2Uq0W5HcyetavCl7ND12', 'access-sandbox-5423b0c9-2019-4f5e-bddd-2b41e52e5651'); --acess token user
 --INSERT INTO "Users" ("user_id", "username", "email", "password_hash", "plaid_access_token") VALUES ('ed1bec4c-0a1b-4783-b47f-16ba0650b821', 'admin', 'admin@smartsplit.com', '$2a$10$nLavVuPde6DTLfHwkoxKkOOYfUt/QZrIg2Uq0W5HcyetavCl7ND12', ''); -- No access token user
+INSERT INTO "PlaidItem" ("user_id", "plaid_item_id", "plaid_access_token", "institution_name") VALUES ('ed1bec4c-0a1b-4783-b47f-16ba0650b821', 'N1ayPx6y4KuazZmV8Zm6C78AAJn5XWIW7Veoj', 'access-sandbox-5423b0c9-2019-4f5e-bddd-2b41e52e5651', 'Bank of America');
 
 INSERT INTO "Allocations" ("allocation_type", "allocation_description", "allocation_factor", "user_id") VALUES ('9f3c76e9-9d43-4480-a56d-a176b783f24d', 'Needs', 0.5, 'ed1bec4c-0a1b-4783-b47f-16ba0650b821');
 INSERT INTO "Allocations" ("allocation_type", "allocation_description", "allocation_factor", "user_id") VALUES ('ac184cdf-b7ff-4eb9-b757-628770d566fb', 'Debts and Repayment', 0.1, 'ed1bec4c-0a1b-4783-b47f-16ba0650b821');

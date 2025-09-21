@@ -5,7 +5,7 @@ import (
 	"fmt"
 	"net/http"
 
-	"github.com/fboydc/smartsplit-main/models"
+	"github.com/fboydc/smartsplit-main/models/api"
 	"github.com/gin-gonic/gin"
 )
 
@@ -79,9 +79,9 @@ func (h *BudgetHandlers) GetBudgetHandler(c *gin.Context) {
 	defer allocationsRows.Close()
 
 	// Process income data
-	incomes := []models.Income{}
+	incomes := []api.Income{}
 	for incomeRows.Next() {
-		var income models.Income
+		var income api.Income
 		err = incomeRows.Scan(&income.Id, &income.Amount, &income.Frequency)
 		if err != nil {
 			c.JSON(http.StatusInternalServerError, gin.H{
@@ -93,9 +93,9 @@ func (h *BudgetHandlers) GetBudgetHandler(c *gin.Context) {
 	}
 
 	// Process expenses data
-	expenses := []models.Expense{}
+	expenses := []api.Expense{}
 	for expensesRows.Next() {
-		var expense models.Expense
+		var expense api.Expense
 		err = expensesRows.Scan(&expense.Id, &expense.Description, &expense.Amount, &expense.Category, &expense.AllocationType)
 		if err != nil {
 			c.JSON(http.StatusInternalServerError, gin.H{
@@ -107,9 +107,9 @@ func (h *BudgetHandlers) GetBudgetHandler(c *gin.Context) {
 	}
 
 	// Process allocations data
-	allocations := []models.Allocation{}
+	allocations := []api.Allocation{}
 	for allocationsRows.Next() {
-		var allocation models.Allocation
+		var allocation api.Allocation
 		err = allocationsRows.Scan(&allocation.AllocationType, &allocation.AllocationDescription, &allocation.AllocationFactor)
 		if err != nil {
 			c.JSON(http.StatusInternalServerError, gin.H{
@@ -121,7 +121,7 @@ func (h *BudgetHandlers) GetBudgetHandler(c *gin.Context) {
 	}
 
 	// Create response
-	budgetResponse := models.GetBudgetResponse{
+	budgetResponse := api.GetBudgetResponse{
 		Incomes:     incomes,
 		Allocations: allocations,
 		Expenses:    expenses,
@@ -143,9 +143,9 @@ func (h *BudgetHandlers) GetCategoriesHandler(c *gin.Context) {
 	}
 	defer rows.Close()
 
-	categories := []models.Category{}
+	categories := []api.Category{}
 	for rows.Next() {
-		var category models.Category
+		var category api.Category
 		err = rows.Scan(&category.ID, &category.Name)
 		if err != nil {
 			c.JSON(http.StatusInternalServerError, gin.H{

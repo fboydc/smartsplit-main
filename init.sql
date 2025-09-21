@@ -102,7 +102,7 @@ CREATE TABLE IF NOT EXISTS "Income" (
 
 
 
-INSERT INTO "Users" ("user_id", "username", "email", "password_hash", "plaid_access_token") VALUES ('ed1bec4c-0a1b-4783-b47f-16ba0650b821', 'admin', 'admin@smartsplit.com', '$2a$10$nLavVuPde6DTLfHwkoxKkOOYfUt/QZrIg2Uq0W5HcyetavCl7ND12', 'access-sandbox-5423b0c9-2019-4f5e-bddd-2b41e52e5651'); --acess token user
+INSERT INTO "Users" ("user_id", "username", "email", "password_hash", "plaid_access_token") VALUES ('ed1bec4c-0a1b-4783-b47f-16ba0650b821', 'admin', 'admin@smartsplit.com', '$2a$10$nLavVuPde6DTLfHwkoxKkOOYfUt/QZrIg2Uq0W5HcyetavCl7ND12', 'access-sandbox-d268cd5d-1d2d-45e8-82a1-d2b0cfdaeab9'); --acess token user
 --INSERT INTO "Users" ("user_id", "username", "email", "password_hash", "plaid_access_token") VALUES ('ed1bec4c-0a1b-4783-b47f-16ba0650b821', 'admin', 'admin@smartsplit.com', '$2a$10$nLavVuPde6DTLfHwkoxKkOOYfUt/QZrIg2Uq0W5HcyetavCl7ND12', ''); -- No access token user
 INSERT INTO "PlaidItem" ("user_id", "plaid_item_id", "plaid_access_token", "institution_name") VALUES ('ed1bec4c-0a1b-4783-b47f-16ba0650b821', 'N1ayPx6y4KuazZmV8Zm6C78AAJn5XWIW7Veoj', 'access-sandbox-5423b0c9-2019-4f5e-bddd-2b41e52e5651', 'Bank of America');
 

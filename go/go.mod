@@ -1,4 +1,4 @@
-module github.com/plaid/quickstart
+module github.com/fboydc/smartsplit-main
 
 go 1.22
 
@@ -8,11 +8,10 @@ require (
 	github.com/plaid/plaid-go/v31 v31.0.0
 )
 
-require github.com/golang-jwt/jwt/v5 v5.2.1
-
 require (
-	github.com/google/uuid v1.6.0 // indirect
-	github.com/lib/pq v1.10.9 // indirect
+	github.com/golang-jwt/jwt/v5 v5.2.1
+	github.com/google/uuid v1.6.0
+	github.com/lib/pq v1.10.9
 )
 
 require (

@@ -272,7 +272,13 @@ func (h *PlaidHandlers) IdentityHandler(c *gin.Context) {
 
 // TransactionsHandler retrieves transactions
 func (h *PlaidHandlers) TransactionsHandler(c *gin.Context) {
-	transactions, err := h.client.GetTransactions(accessToken)
+
+	accessToken, exists := c.Get("AccessToken")
+	if !exists || accessToken == "" {
+		c.JSON(http.StatusBadRequest, gin.H{"error": "AccessToken not provided"})
+		return
+	}
+	transactions, err := h.client.GetTransactions(accessToken.(string))
 	if err != nil {
 		renderError(c, err)
 		return

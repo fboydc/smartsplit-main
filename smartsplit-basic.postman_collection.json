@@ -1,0 +1,234 @@
+{
+	"info": {
+		"_postman_id": "af575f19-1ac4-4f84-88db-663d4121ce0a",
+		"name": "smartsplit-basic",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Attempt Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "user",
+							"value": "admin",
+							"type": "default"
+						},
+						{
+							"key": "password",
+							"value": "password",
+							"type": "default"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:8000/api/auth/login",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Transactions",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "default"
+					},
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3NTg0NzI3MjcsInVzZXJpZCI6ImVkMWJlYzRjLTBhMWItNDc4My1iNDdmLTE2YmEwNjUwYjgyMSJ9.0YxiCUK8wounQkVm2lNJK0QyA0BLx581wvKTUpMZ6Hw",
+						"type": "default"
+					},
+					{
+						"key": "AccessToken",
+						"value": "{{.accesstoken}}",
+						"type": "default"
+					}
+				],
+				"url": {
+					"raw": "localhost:8000/api/transactions",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"transactions"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Dummy Transactions",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3NTg0Njg0MDcsInVzZXJpZCI6ImVkMWJlYzRjLTBhMWItNDc4My1iNDdmLTE2YmEwNjUwYjgyMSJ9.__s2Auf6QfJ2S-hyVtlxobJ-yom7tmKCqwQhzZsYaOE",
+						"type": "default"
+					},
+					{
+						"key": "",
+						"value": "",
+						"type": "default",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "localhost:8000/api/dummy/transactions",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"dummy",
+						"transactions"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get User Items",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3NTgzODU1MDcsInVzZXJpZCI6ImVkMWJlYzRjLTBhMWItNDc4My1iNDdmLTE2YmEwNjUwYjgyMSJ9.TLrWtfYEdUl3O4IN6jgBgD7-BYyr7KSmocZ8GuODIig",
+						"type": "default"
+					},
+					{
+						"key": "accessToken",
+						"value": "access-sandbox-5423b0c9-2019-4f5e-bddd-2b41e52e5651",
+						"type": "default"
+					}
+				],
+				"url": {
+					"raw": "localhost:8000/api/item",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"item"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Generate Link Token",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"client_id\": \"65da300c642c71001c22882f\",\n  \"secret\": \"9e32da04d42b2fd57f9a7e6b4334af\",\n  \"client_name\": \"Smart Split\",\n  \"country_codes\": [\"US\"],\n  \"language\": \"en\",\n  \"user\": {\n    \"client_user_id\": \"admin\"\n  },\n  \"access_token\": \"access-sandbox-d268cd5d-1d2d-45e8-82a1-d2b0cfdaeab9\",\n  \"products\": [\"transactions\"]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://sandbox.plaid.com/link/token/create",
+					"protocol": "https",
+					"host": [
+						"sandbox",
+						"plaid",
+						"com"
+					],
+					"path": [
+						"link",
+						"token",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Generate Public Token",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"client_id\": \"65da300c642c71001c22882f\",\n  \"secret\": \"9e32da04d42b2fd57f9a7e6b4334af\",\n  \"institution_id\": \"ins_127989\",\n  \"initial_products\": [\"transactions\"]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://sandbox.plaid.com/sandbox/public_token/create",
+					"protocol": "https",
+					"host": [
+						"sandbox",
+						"plaid",
+						"com"
+					],
+					"path": [
+						"sandbox",
+						"public_token",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Exchange Public Token",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"client_id\": \"65da300c642c71001c22882f\",\n  \"secret\": \"9e32da04d42b2fd57f9a7e6b4334af\",\n  \"public_token\": \"public-sandbox-a3a80590-8a22-4707-9f40-f7478abe770d\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://sandbox.plaid.com/item/public_token/exchange",
+					"protocol": "https",
+					"host": [
+						"sandbox",
+						"plaid",
+						"com"
+					],
+					"path": [
+						"item",
+						"public_token",
+						"exchange"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

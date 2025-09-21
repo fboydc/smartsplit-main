@@ -71,7 +71,7 @@ func (h *AuthHandlers) AuthMiddleware() gin.HandlerFunc {
 	return gin.HandlerFunc(func(c *gin.Context) {
 		authHeader := c.GetHeader("Authorization")
 		// Note: You might want to handle access token here too
-		// accessToken := c.GetHeader("AccessToken")
+		accessToken := c.GetHeader("AccessToken")
 
 		if authHeader == "" {
 			c.JSON(http.StatusUnauthorized, gin.H{"error": "Authorization header required"})
@@ -92,6 +92,7 @@ func (h *AuthHandlers) AuthMiddleware() gin.HandlerFunc {
 			return
 		}
 
+		c.Set("AccessToken", accessToken)
 		c.Next()
 	})
 }

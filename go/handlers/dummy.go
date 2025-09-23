@@ -5,7 +5,7 @@ import (
 	"net/http"
 	"os"
 
-	"github.com/fboydc/smartsplit-main/models"
+	"github.com/fboydc/smartsplit-main/models/api"
 	"github.com/gin-gonic/gin"
 )
 
@@ -27,7 +27,7 @@ func (h *DummyHandlers) GetDummyTransactionsHandler(c *gin.Context) {
 	}
 	defer file.Close()
 
-	var response models.GetDummyTransactionsResponse
+	var response api.GetDummyTransactionsResponse
 	if err := json.NewDecoder(file).Decode(&response); err != nil {
 		c.JSON(http.StatusInternalServerError, gin.H{"error": "Failed to parse JSON file"})
 		return
